@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruta de color — Edición especial 1955–1973</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#EFE2C4;--card:#FBF4E1;--card2:#F4E8CB;--ink:#2B1A12;--mute:#6E5441;--or:#D9561C;--mu:#E0A021;--av:#7A8A2E;--br:#6A3B1E;--dot:rgba(43,26,18,.11);color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1B120C;--card:#2A1D14;--card2:#35261A;--ink:#F3E6C8;--mute:#BBA68A;--or:#EE7A3A;--mu:#E8B23A;--av:#9DB041;--br:#C98A52;--dot:rgba(243,230,200,.07);color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#1B120C;--card:#2A1D14;--card2:#35261A;--ink:#F3E6C8;--mute:#BBA68A;--or:#EE7A3A;--mu:#E8B23A;--av:#9DB041;--br:#C98A52;--dot:rgba(243,230,200,.07);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle,var(--dot) 1.1px,transparent 1.5px) 0 0/7px 7px,var(--paper);color:var(--ink);font:400 16px/1.6 'Libre Baskerville',Georgia,serif}
+main{max-width:860px;margin:0 auto;padding:26px 18px 64px}
+.strip{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font:700 .72rem 'Courier Prime',monospace;letter-spacing:.14em;text-transform:uppercase;border-top:3px solid var(--ink);border-bottom:1px solid var(--ink);padding:6px 2px;color:var(--ink)}
+.logo{font:400 clamp(2.6rem,11vw,5.2rem)/1 Shrikhand,serif;margin:18px 0 6px;color:var(--or);letter-spacing:-.01em;text-shadow:3px 3px 0 var(--mu),6px 6px 0 var(--br);transform:rotate(-1.5deg);transform-origin:left}
+.bands{display:flex;flex-direction:column;gap:4px;margin:18px 0 14px}
+.bands i{display:block;height:8px;border-radius:0 8px 8px 0}
+.bands i:nth-child(1){background:var(--or);width:100%}.bands i:nth-child(2){background:var(--mu);width:88%}.bands i:nth-child(3){background:var(--br);width:74%}
+.sub{margin:0 0 24px;max-width:54ch;font-style:italic;color:var(--mute)}
+.trail{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{font:700 .74rem 'Courier Prime',monospace;text-transform:uppercase;letter-spacing:.05em;background:var(--card);border:2px solid var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer;color:var(--ink);display:flex;gap:6px;align-items:center}
+.chip b{color:var(--or)}
+.chip:hover{background:var(--mu);color:#2B1A12}.chip:hover b{color:#2B1A12}
+.page{background:var(--card);border:3px solid var(--ink);border-radius:22px;padding:26px 22px 18px;box-shadow:8px 8px 0 var(--or)}
+.head{display:flex;align-items:center;gap:20px;margin-bottom:20px}
+.num{flex:none;width:62px;height:62px;border-radius:50%;background:var(--or);color:#FBF4E1;display:grid;place-items:center;font:400 2rem/1 Shrikhand,serif;box-shadow:0 0 0 4px var(--card),0 0 0 7px var(--mu),0 0 0 10px var(--br);margin:10px}
+.head h2{font:400 clamp(1.5rem,5vw,2.1rem)/1.1 Shrikhand,serif;margin:0;color:var(--ink)}
+.hint{font:400 .78rem 'Courier Prime',monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);margin:4px 0 0}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.opt{text-align:left;background:var(--card2);border:2.5px solid var(--ink);border-radius:14px;padding:14px 16px;cursor:pointer;color:var(--ink);font:inherit;box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .12s}
+.opt:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--or);background:var(--mu);color:#2B1A12}
+.opt:hover span{color:#2B1A12}
+.opt:focus-visible,.chip:focus-visible,.back:focus-visible,.restart:focus-visible,.cp:focus-visible,.tint:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.opt b{display:block;font:400 1.15rem/1.2 Shrikhand,serif;margin-bottom:4px}
+.opt span{font-size:.82rem;color:var(--mute);line-height:1.4;display:block}
+.back{margin-top:22px;background:none;border:0;color:var(--mute);font:700 .78rem 'Courier Prime',monospace;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:4px 0}
+.back:hover{color:var(--or)}
+.folio{text-align:center;font:400 .75rem 'Courier Prime',monospace;letter-spacing:.2em;color:var(--mute);margin-top:18px;border-top:1px dashed var(--mute);padding-top:10px}
+.lead{font-style:italic;color:var(--mute);margin:0 0 20px;max-width:62ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;margin:6px 0 20px}
+.fic{background:var(--card2);border:2.5px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:5px 5px 0 var(--ink)}
+.pic{position:relative;padding:14px 12px 4px;background:linear-gradient(180deg,#F6E7C4 0 62%,#E5A53A 62% 70%,#D9561C 70% 78%,#6A3B1E 78% 86%,#F6E7C4 86%);border-bottom:2.5px solid var(--ink)}
+.pic svg{display:block;width:100%;height:auto}
+.no{position:absolute;top:8px;left:10px;background:#2B1A12;color:#F6E7C4;font:700 .7rem 'Courier Prime',monospace;letter-spacing:.1em;padding:2px 8px;border-radius:4px}
+.meta{padding:14px 16px 16px}
+.meta h3{font:400 1.35rem/1.15 Shrikhand,serif;margin:0 0 2px;color:var(--or)}
+.nm{font:700 .72rem 'Courier Prime',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 8px}
+.meta p.txt{margin:6px 0 14px;font-size:.85rem;color:var(--ink);line-height:1.55}
+.part{margin-top:12px}
+.plabel{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px;font:700 .78rem 'Courier Prime',monospace;letter-spacing:.06em;text-transform:uppercase}
+.plabel .rd b{font-size:.95rem;letter-spacing:.04em}
+.cp{background:none;border:0;color:var(--or);font:inherit;text-decoration:underline;cursor:pointer;padding:0 0 0 8px}
+.tints{display:flex;border:2px solid var(--ink);border-radius:10px;overflow:hidden;height:38px}
+.tint{flex:1;border:0;cursor:pointer;padding:0;border-right:1px solid rgba(0,0,0,.2)}
+.tint:last-child{border-right:0}
+.tint.on{outline:3px solid #FBF4E1;outline-offset:-5px;box-shadow:inset 0 0 0 2px #2B1A12}
+.scale{display:flex;justify-content:space-between;font:400 .66rem 'Courier Prime',monospace;color:var(--mute);margin-top:3px;letter-spacing:.06em;text-transform:uppercase}
+.why{margin:-6px 0 6px;font:400 .68rem/1.5 'Courier Prime',monospace;letter-spacing:.04em;color:var(--mute)}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.restart.more{background:var(--mu);color:#2B1A12}
+.restart{margin-top:6px;background:var(--or);color:#FBF4E1;border:2.5px solid var(--ink);border-radius:999px;padding:11px 22px;font:400 1.05rem Shrikhand,serif;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+.restart:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--mu)}
+.note{color:var(--mute);font-size:.78rem;margin-top:20px;line-height:1.6;max-width:66ch;border-top:1px dashed var(--mute);padding-top:12px}
+@media(max-width:480px){.opts{grid-template-columns:1fr}.head{gap:8px}.page{padding:20px 14px 14px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head>
+<body><main>
+<header>
+ <div class="strip"><span>Año III · Nº 7</span><span>Edición especial 1955–1973</span><span>Buenos Aires</span></div>
+ <h1 class="logo">Ruta de color</h1>
+ <div class="bands"><i></i><i></i><i></i></div>
+ <p class="sub">La guía para elegir la pintura de su auto argentino, desde fines de los cincuenta hasta 1973. Recorra las páginas, responda cada pregunta y elija entre los tonos hasta dar con el justo.</p>
+</header>
+<div class="trail" id="trail"></div>
+<section class="page" id="card"></section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const STEPS=[
+ {k:'era',q:'¿De qué año es su auto?',opts:[
+  {id:'a',l:'1955 – 1959',d:'Fines de los 50: pasteles, cromados y bicolores'},
+  {id:'b',l:'1960 – 1966',d:'Colores sólidos, deportivos y de carrera'},
+  {id:'c',l:'1967 – 1973',d:'Naranjas, mostazas y tonos tierra'}]},
+ {k:'body',q:'¿Qué tipo de carrocería lleva?',opts:[
+  {id:'sedan',l:'Sedán',d:'Falcon, Chevy, Peugeot 404: el auto de la familia'},
+  {id:'coupe',l:'Coupé deportivo',d:'Torino, Chevy SS y compañía: dos puertas y carácter'},
+  {id:'rural',l:'Rural / Break',d:'Familiar de ruta y vacaciones'},
+  {id:'pickup',l:'Pickup',d:'F-100, Rastrojero: trabajo y campo'},
+  {id:'util',l:'Furgón / utilitario',d:'Reparto y carga'},
+  {id:'popular',l:'Chiquito popular',d:'Fiat 600, Dauphine, 3CV: el auto de todos'}]},
+ {k:'style',q:'¿Qué carácter le quiere dar al auto?',opts:[
+  {id:'elegante',l:'Elegante y sobrio',d:'Discreto, de buen porte'},
+  {id:'deportivo',l:'Deportivo y de carrera',d:'Que se note el motor'},
+  {id:'campo',l:'Campo y ruta',d:'Para el camino de tierra'},
+  {id:'familiar',l:'Familiar y práctico',d:'Cálido y fácil de mantener'},
+  {id:'llamativo',l:'Llamativo y personal',d:'Que se destaque en la cuadra'}]},
+ {k:'origin',q:'¿Qué estilo de color prefiere?',opts:[
+  {id:'americano',l:'Americano',d:'Intenso y brillante: turquesas, rojos, cremas y negros con cromo'},
+  {id:'europeo',l:'Europeo',d:'Sobrio y refinado: azules, verdes profundos y bordós'},
+  {id:'italiano',l:'Italiano',d:'Con pasión: rojos, amarillos y azules vivos'},
+  {id:'japones',l:'Japonés',d:'Limpio y simple: blancos, plateados y celestes'},
+  {id:'criollo',l:'Criollo',d:'Los tonos de las calles y rutas de acá'}]},
+ {k:'engine',q:'¿Qué motor lleva?',opts:[
+  {id:'nafta',l:'Nafta',d:'El motor de la mayoría'},
+  {id:'diesel',l:'Diésel',d:'Utilitarios, pickups y algún sedán'}]},
+ {k:'dist',q:'¿Cómo prefiere distribuir el color?',opts:[
+  {id:'mono',l:'Un solo color',d:'Todo el auto parejo'},
+  {id:'bitono',l:'Bitono',d:'Color de base y techo en contraste'},
+  {id:'franjas',l:'Con franjas',d:'Bandas deportivas a lo largo de la carrocería'}]}
+];
+const COLORS=[
+ {n:'Blanco Nieve',h:'#F3EFE6',t:{style:['elegante','familiar'],origin:['japones','europeo','criollo'],era:['b','c']},note:'Limpio y luminoso: un blanco que no pasa de moda y se mantiene fresco bajo el sol.'},
+ {n:'Crema Marfil',h:'#EFE1B8',t:{style:['familiar','elegante'],origin:['americano','europeo'],era:['a','b']},note:'El crema de los cincuenta: suave, cálido y perfecto para combinar en dos tonos.'},
+ {n:'Gris Plata',h:'#AEB2B5',t:{style:['elegante'],origin:['japones','europeo'],era:['b','c']},note:'Sobrio, moderno y discreto, de los que no cansan.'},
+ {n:'Negro Ébano',h:'#17130F',t:{style:['elegante','deportivo'],body:['sedan','coupe'],origin:['americano','europeo']},note:'Porte de auto de gala. Eso sí: pide trapo y lustre seguido.'},
+ {n:'Azul Noche',h:'#1D2B4F',t:{style:['elegante'],body:['sedan','coupe'],origin:['europeo','americano']},note:'La alternativa seria al negro, ideal para sedanes de buen nivel.'},
+ {n:'Azul Francia',h:'#1E56A8',t:{style:['deportivo'],engine:['nafta'],era:['b','c'],body:['coupe','sedan'],origin:['europeo','americano']},note:'El azul de las carreras de ruta: un clásico de los coupés deportivos.'},
+ {n:'Rojo Competición',h:'#C0281C',t:{style:['deportivo','llamativo'],body:['coupe','popular'],engine:['nafta'],origin:['italiano','americano']},note:'Rojo intenso que va solo a pedir pista.'},
+ {n:'Naranja Mandarina',h:'#E3662B',t:{style:['llamativo','deportivo'],era:['c'],engine:['nafta'],origin:['americano','criollo']},note:'Si hay un color que suena a principios de los setenta, es este.'},
+ {n:'Amarillo Mostaza',h:'#D9A21B',t:{style:['llamativo','familiar'],era:['b','c'],engine:['nafta'],origin:['italiano','americano']},note:'Cálido y alegre, de los más pedidos para estrenar auto.'},
+ {n:'Verde Manzana',h:'#8DB33A',t:{style:['llamativo'],body:['popular','sedan'],era:['b','c'],engine:['nafta'],origin:['americano','italiano']},note:'Fresco y juguetón, queda ideal en los autos chicos.'},
+ {n:'Verde Oliva',h:'#4F5A24',t:{style:['campo'],body:['pickup','rural','util'],engine:['diesel','nafta'],origin:['criollo']},note:'El de toda la vida para el trabajo rural: disimula el polvo y aguanta el uso.'},
+ {n:'Verde Selva',h:'#1F4D3A',t:{style:['elegante','campo'],era:['b','c'],origin:['europeo']},note:'Profundo y señorial, de esos que no se ven en cualquier esquina.'},
+ {n:'Marrón Chocolate',h:'#5B3A24',t:{style:['campo','elegante'],era:['c'],body:['pickup','rural','sedan'],origin:['criollo','europeo']},note:'Tono tierra por excelencia: elegante en la ciudad y práctico en el camino.'},
+ {n:'Ocre Tierra',h:'#B8803A',t:{style:['campo','familiar'],era:['c'],engine:['diesel','nafta'],origin:['criollo']},note:'Se funde con el camino de tierra y no marca el polvo.'},
+ {n:'Beige Crema',h:'#DCCBA3',t:{style:['familiar','campo'],body:['rural','sedan'],origin:['europeo','criollo','americano']},note:'Claro y discreto: ayuda a llevar mejor el calor del verano.'},
+ {n:'Celeste Cielo',h:'#7CC0DE',t:{style:['familiar','llamativo'],body:['popular'],engine:['nafta'],era:['a','b'],origin:['japones','criollo','americano']},note:'Liviano y fresco, un clásico en los autos chicos.'},
+ {n:'Turquesa',h:'#2FA7A0',t:{style:['llamativo'],era:['a','b'],engine:['nafta'],origin:['americano']},note:'Un color de postal, muy de los cincuenta y principios de los sesenta.'},
+ {n:'Verde Agua',h:'#9BD1BD',t:{style:['familiar','llamativo'],era:['a','b'],engine:['nafta'],body:['popular','sedan'],origin:['americano','japones']},note:'Un pastel fresco y dulce que realza los cromados.'},
+ {n:'Coral Rosado',h:'#E9806E',t:{style:['llamativo','familiar'],era:['a'],engine:['nafta'],origin:['americano']},note:'Un tono cálido y suave, muy de la época de los cromados.'},
+ {n:'Bordó',h:'#6A1F2E',t:{style:['elegante'],body:['sedan'],origin:['europeo','italiano']},note:'Un rojo bajado de tono: elegante y de mucha presencia.'},
+ {n:'Berenjena',h:'#5A2F55',t:{style:['llamativo','elegante'],era:['c'],engine:['nafta'],origin:['americano','europeo']},note:'Un violeta oscuro para quien quiere salirse de lo común sin perder categoría.'},
+ {n:'Amarillo Canario',h:'#F2CF2B',t:{style:['llamativo'],body:['popular','coupe'],era:['b','c'],engine:['nafta'],origin:['italiano','americano']},note:'Amarillo pleno y luminoso: se ve de lejos y le da alegría a cualquier autito.'},
+ {n:'Amarillo Maíz',h:'#F1DE94',t:{style:['familiar','elegante'],era:['a','b'],origin:['americano','europeo']},note:'Un amarillo suave y mantecoso, muy de los cincuenta y primeros sesenta.'},
+ {n:'Naranja Óxido',h:'#B5532A',t:{style:['campo','llamativo'],body:['pickup','rural','coupe'],era:['c'],origin:['criollo','americano']},note:'Un naranja apagado y terroso: los setenta sin gritar.'},
+ {n:'Rojo Cereza',h:'#9C1C2E',t:{style:['elegante','deportivo'],body:['coupe','sedan'],era:['b','c'],origin:['americano','italiano']},note:'Un rojo profundo y con cuerpo: más señorial que el competición.'},
+ {n:'Rojo Ladrillo',h:'#9A3B2B',t:{style:['campo','familiar'],era:['c'],origin:['criollo']},note:'Rojo de teja que se lleva bien con el campo y disimula el polvo.'},
+ {n:'Rosa Salmón',h:'#F0A58F',t:{style:['llamativo','familiar'],body:['sedan','popular'],era:['a'],engine:['nafta'],origin:['americano']},note:'Rosado cálido y suave, de la época de los cromados.'},
+ {n:'Lila Pastel',h:'#C7B5DA',t:{style:['llamativo'],body:['sedan','popular'],era:['a'],engine:['nafta'],origin:['americano']},note:'Un pastel poco común: dulce y distinto, para destacarse en la cuadra.'},
+ {n:'Verde Menta',h:'#B7E0CB',t:{style:['familiar','llamativo'],body:['popular','sedan'],era:['a','b'],engine:['nafta'],origin:['japones','americano']},note:'Fresco y limpio, un pastel muy de los autos chicos de los sesenta.'},
+ {n:'Verde Esmeralda',h:'#12805A',t:{style:['llamativo','elegante'],body:['sedan','coupe'],era:['b','c'],origin:['europeo','italiano']},note:'Un verde joya, intenso y brillante, que se distingue entre tanto sobrio.'},
+ {n:'Verde Musgo',h:'#6B7142',t:{style:['campo'],body:['pickup','rural','util'],era:['c'],engine:['diesel','nafta'],origin:['criollo']},note:'Más amarillento y apagado que el oliva: se funde con el monte y el yuyo.'},
+ {n:'Azul Petróleo',h:'#1F4E5F',t:{style:['elegante','campo'],body:['sedan','rural'],era:['c'],origin:['europeo']},note:'Un azul verdoso profundo, serio y poco visto.'},
+ {n:'Azul Lago',h:'#2D5F8A',t:{style:['familiar','elegante'],era:['b','c'],origin:['europeo','japones']},note:'Azul medio, limpio y amable: el punto justo entre el celeste y el marino.'},
+ {n:'Azul Hielo',h:'#A9C8E0',t:{style:['familiar','elegante'],body:['sedan','popular'],era:['a','b'],origin:['japones','americano','europeo']},note:'Azul pálido y frío, ideal con cromados y techo blanco.'},
+ {n:'Azul Pavo Real',h:'#0F6A8B',t:{style:['llamativo','deportivo'],body:['coupe','sedan'],era:['b','c'],engine:['nafta'],origin:['italiano','americano']},note:'Entre azul y turquesa, con un brillo profundo que se nota en la calle.'},
+ {n:'Gris Acero',h:'#6F7780',t:{style:['elegante','deportivo'],body:['sedan','coupe'],era:['b','c'],origin:['japones','europeo']},note:'Gris medio con un toque azulado: técnico, serio y fácil de mantener.'},
+ {n:'Gris Perla',h:'#D4D6D8',t:{style:['elegante','familiar'],body:['sedan'],era:['b','c'],origin:['japones','europeo']},note:'Un gris clarito, casi blanco, que se ve limpio incluso con polvo.'},
+ {n:'Cobre Metalizado',h:'#A8602F',t:{style:['elegante','llamativo'],body:['coupe','sedan'],era:['c'],engine:['nafta'],origin:['americano']},note:'Metalizado cálido con brillo de bronce, para quien quiere un toque de lujo.'},
+ {n:'Dorado Champagne',h:'#C9A96A',t:{style:['elegante'],body:['sedan'],era:['a','b'],engine:['nafta'],origin:['americano']},note:'Dorado suave de gran salón: luce con cromos y techo oscuro.'},
+ {n:'Té con Leche',h:'#B89F82',t:{style:['familiar','campo'],body:['rural','sedan'],era:['c'],origin:['europeo','criollo']},note:'Un beige tostado cálido, discreto y fácil de combinar.'}
+];
+const PAIRS=[
+ {a:'Turquesa',b:'Crema Marfil',label:'Heladería',t:{style:['llamativo','familiar'],era:['a','b'],origin:['americano']},note:'Turquesa con techo crema: el bicolor de moda con mucho cromo.'},
+ {a:'Coral Rosado',b:'Blanco Nieve',label:'Verano',t:{style:['llamativo'],era:['a'],origin:['americano']},note:'Suave y alegre, de esas combinaciones que ya anuncian vacaciones.'},
+ {a:'Verde Agua',b:'Blanco Nieve',label:'Brisa',t:{style:['familiar','llamativo'],era:['a','b'],origin:['americano','japones']},note:'Un verde pastel con techo blanco, fresco y prolijo.'},
+ {a:'Rojo Competición',b:'Blanco Nieve',label:'Techo vinílico',t:{style:['deportivo','llamativo'],body:['coupe','sedan'],era:['b','c'],origin:['americano','italiano']},note:'Techo claro sobre un color fuerte: combinación de moda en coupés y sedanes.'},
+ {a:'Celeste Cielo',b:'Blanco Nieve',label:'Cielo despejado',t:{style:['familiar','llamativo'],body:['popular','sedan'],origin:['japones','criollo']},note:'Fresco y luminoso, ideal para el auto de la familia.'},
+ {a:'Verde Oliva',b:'Beige Crema',label:'Camino rural',t:{style:['campo'],body:['pickup','rural','util'],origin:['criollo']},note:'Base oscura y techo claro: abriga menos el calor en cabina y disimula el polvo.'},
+ {a:'Marrón Chocolate',b:'Beige Crema',label:'Café con leche',t:{style:['elegante','familiar'],era:['c'],origin:['criollo','europeo']},note:'Dupla de tierra y crema, de calidez muy de principios de los setenta.'},
+ {a:'Naranja Mandarina',b:'Negro Ébano',label:'Atardecer',t:{style:['llamativo','deportivo'],era:['c'],engine:['nafta'],origin:['americano','criollo']},note:'Contraste fuerte con aire de competición.'},
+ {a:'Azul Francia',b:'Blanco Nieve',label:'Pista',t:{style:['deportivo','elegante'],body:['coupe','sedan'],era:['b','c'],origin:['europeo','americano']},note:'Azul y blanco, un clásico de pista que nunca falla.'},
+ {a:'Amarillo Mostaza',b:'Marrón Chocolate',label:'Otoño',t:{style:['llamativo','familiar'],era:['c'],origin:['americano','criollo']},note:'Dos tonos cálidos y cercanos: el techo oscuro asienta al amarillo.'},
+ {a:'Rosa Salmón',b:'Negro Ébano',label:'Rosa y carbón',t:{style:['llamativo','elegante'],body:['sedan'],era:['a'],engine:['nafta'],origin:['americano']},note:'Un clásico de los cincuenta: un tono dulce con techo oscuro que lo sostiene.'},
+ {a:'Rojo Cereza',b:'Crema Marfil',label:'Cereza con crema',t:{style:['elegante','llamativo'],body:['sedan','coupe'],era:['a','b'],origin:['americano']},note:'Rojo profundo con techo crema: contraste claro y de mucha elegancia.'},
+ {a:'Azul Lago',b:'Blanco Nieve',label:'Lago',t:{style:['familiar','elegante'],era:['b','c'],origin:['europeo','japones']},note:'Azul amable con techo blanco: limpio, fresco y de buena reventa.'},
+ {a:'Azul Petróleo',b:'Gris Perla',label:'Petróleo y perla',t:{style:['elegante'],body:['sedan','rural'],era:['c'],origin:['europeo']},note:'Un azul serio con techo claro: sobriedad con un toque de frescura.'},
+ {a:'Bordó',b:'Beige Crema',label:'Bordó y crema',t:{style:['elegante'],body:['sedan'],era:['a','b'],origin:['europeo','italiano']},note:'Vino con crema: elegancia de salón, sin estridencias.'},
+ {a:'Gris Plata',b:'Negro Ébano',label:'Plata con techo negro',t:{style:['elegante','deportivo'],body:['sedan','coupe'],era:['b','c'],origin:['europeo','japones']},note:'Base plateada con techo negro: la combinación más seria y de más porte.'},
+ {a:'Verde Musgo',b:'Té con Leche',label:'Monte',t:{style:['campo'],body:['pickup','rural','util'],era:['c'],origin:['criollo']},note:'Tonos del paisaje: se pierde en el monte y aguanta el polvo.'},
+ {a:'Cobre Metalizado',b:'Negro Ébano',label:'Cobre y carbón',t:{style:['elegante','llamativo'],body:['coupe','sedan'],era:['c'],engine:['nafta'],origin:['americano']},note:'Cobre con techo negro: lujo cálido y con mucho brillo.'},
+ {a:'Verde Esmeralda',b:'Crema Marfil',label:'Esmeralda y crema',t:{style:['elegante','llamativo'],body:['sedan'],era:['a','b'],origin:['europeo','italiano']},note:'Un verde joya con techo crema: distinguido y poco común.'},
+ {a:'Azul Pavo Real',b:'Blanco Nieve',label:'Pavo real',t:{style:['llamativo','deportivo'],body:['coupe','sedan'],era:['b','c'],origin:['italiano','americano']},note:'Azul turquesado con techo blanco: vivo, limpio y de mucho carácter.'},
+ {a:'Rojo Competición',b:'Negro Ébano',label:'Rojo y negro',t:{style:['deportivo'],body:['coupe'],era:['b','c'],engine:['nafta'],origin:['italiano','americano']},note:'La dupla más agresiva: techo negro sobre rojo vivo.'},
+ {a:'Amarillo Canario',b:'Negro Ébano',label:'Negro y amarillo',t:{style:['llamativo'],body:['popular','sedan','util'],era:['b','c'],origin:['italiano','americano']},note:'El contraste más fuerte posible: se ve desde lejos y no pasa desapercibido.'},
+ {a:'Verde Manzana',b:'Blanco Nieve',label:'Frescura',t:{style:['llamativo','familiar'],body:['popular'],era:['b','c'],engine:['nafta'],origin:['americano','italiano']},note:'Verde vivo con techo blanco: juvenil y alegre para un autito chico.'},
+ {a:'Dorado Champagne',b:'Marrón Chocolate',label:'Champagne y chocolate',t:{style:['elegante'],body:['sedan'],era:['a','b'],engine:['nafta'],origin:['americano']},note:'Dorado suave con techo oscuro: un toque de lujo de otra época.'},
+ {a:'Azul Hielo',b:'Azul Noche',label:'Dúo azul',t:{style:['elegante','familiar'],body:['sedan','popular'],era:['a','b'],origin:['japones','europeo']},note:'Tono sobre tono: un celeste frío con techo azul profundo, muy prolijo.'},
+ {a:'Naranja Óxido',b:'Beige Crema',label:'Atardecer en el campo',t:{style:['campo','llamativo'],body:['pickup','rural'],era:['c'],origin:['criollo']},note:'Naranja terroso con techo claro: cálido, rural y fácil de mantener.'}
+];
+const STRIPES=[
+ {label:'Largada',base:'#1E56A8',s:['#F3EFE6','#C0281C'],names:['Base','Franja','Filete'],t:{style:['deportivo'],body:['coupe','sedan'],engine:['nafta'],era:['b','c'],origin:['europeo','americano']},note:'Franja blanca ancha con filete rojo sobre azul: aire de carrera de ruta.'},
+ {label:'Competición',base:'#C0281C',s:['#F3EFE6','#17130F'],names:['Base','Franja','Filete'],t:{style:['deportivo','llamativo'],body:['coupe','popular'],engine:['nafta'],era:['b','c'],origin:['italiano','americano']},note:'Rojo con franja blanca y filete negro, el uniforme de los autos de pista.'},
+ {label:'Sprint',base:'#17130F',s:['#E3662B','#D9A21B'],names:['Base','Franja','Filete'],t:{style:['deportivo','llamativo'],era:['c'],engine:['nafta'],origin:['americano','criollo']},note:'Negro con franjas naranja y mostaza: el sol de los setenta sobre fondo oscuro.'},
+ {label:'Rally',base:'#F3EFE6',s:['#1E56A8','#C0281C'],names:['Base','Franja','Filete'],t:{style:['deportivo','familiar'],body:['popular','coupe','sedan'],era:['b','c'],origin:['japones','europeo','italiano']},note:'Fondo blanco con franja azul y filete rojo, limpio y deportivo a la vez.'},
+ {label:'Pampa',base:'#4F5A24',s:['#DCCBA3','#5B3A24'],names:['Base','Franja','Filete'],t:{style:['campo'],body:['pickup','rural','util'],engine:['diesel','nafta'],era:['c'],origin:['criollo']},note:'Verde oliva con franja crema: sobrio, de trabajo y con carácter.'},
+ {label:'Mostaza y carbón',base:'#D9A21B',s:['#17130F','#F3EFE6'],names:['Base','Franja','Filete'],t:{style:['deportivo','llamativo'],body:['coupe','popular'],era:['c'],engine:['nafta'],origin:['italiano','americano']},note:'Mostaza con franja negra y filete blanco: contraste muy de principios de los setenta.'},
+ {label:'Pista inglesa',base:'#1F4D3A',s:['#EFE1B8','#C9A96A'],names:['Base','Franja','Filete'],t:{style:['elegante','deportivo'],body:['coupe','sedan'],era:['b','c'],origin:['europeo']},note:'Verde profundo con franja crema y filete dorado: deportivo sin perder la compostura.'},
+ {label:'Atardecer en pista',base:'#E3662B',s:['#F3EFE6','#17130F'],names:['Base','Franja','Filete'],t:{style:['deportivo','llamativo'],body:['coupe','popular','sedan'],era:['c'],engine:['nafta'],origin:['americano']},note:'Naranja con franja blanca y filete negro: pura energía de los setenta.'},
+ {label:'Flecha de plata',base:'#AEB2B5',s:['#C0281C','#17130F'],names:['Base','Franja','Filete'],t:{style:['elegante','deportivo'],body:['coupe','sedan'],era:['b','c'],origin:['europeo','japones','italiano']},note:'Base plateada con franja roja y filete negro: sobria con toque de carrera.'},
+ {label:'Cielo y mar',base:'#7CC0DE',s:['#F3EFE6','#1E56A8'],names:['Base','Franja','Filete'],t:{style:['familiar','llamativo'],body:['popular','sedan'],era:['b','c'],engine:['nafta'],origin:['criollo','japones']},note:'Celeste con franja blanca y filete azul: fresco, prolijo y bien nuestro.'},
+ {label:'Gala',base:'#17130F',s:['#C9A96A','#9C1C2E'],names:['Base','Franja','Filete'],t:{style:['elegante','deportivo'],body:['coupe','sedan'],era:['c'],engine:['nafta'],origin:['americano']},note:'Negro con franja dorada y filete cereza: deportivo con aire de lujo.'}
+];
+const SHAPES={
+ sedan:{sy:43,body:'M8 56V46Q8 42 13 41L44 37L62 21Q64 19 68 19H128Q132 19 135 22L150 37L184 41Q192 42 192 47V56Z',roof:'M52 31L62 21Q64 19 68 19H128Q132 19 135 22L143 31Z',win:['M56 35L65 24H96V35Z','M101 35V24H128L139 35Z']},
+ coupe:{sy:44,body:'M8 56V47Q8 43 13 42L50 38L72 24Q75 22 80 22H118Q124 22 130 27L160 40L186 43Q192 44 192 48V56Z',roof:'M60 33L72 24Q75 22 80 22H118Q124 22 130 27L136 32Z',win:['M65 36L74 27H100V36Z','M105 36V27H118Q121 27 124 30L132 36Z']},
+ rural:{sy:43,body:'M8 56V46Q8 42 13 41L44 37L62 21Q64 19 68 19H160Q164 19 165 23L168 40H186Q192 41 192 47V56Z',roof:'M52 31L62 21Q64 19 68 19H160Q164 19 165 23L166 31Z',win:['M56 35L65 24H92V35Z','M97 35V24H126V35Z','M131 35V24H161L162 35Z']},
+ pickup:{sy:44,body:'M8 56V46Q8 42 13 41L44 38L60 22Q62 20 66 20H100Q104 20 106 24L110 38H186Q192 39 192 45V56Z',roof:'M52 32L60 22Q62 20 66 20H100Q104 20 106 24L108 32Z',win:['M58 36L65 25H86V36Z','M90 36V25H100L103 36Z']},
+ util:{sy:44,body:'M8 56V30Q8 22 16 22H150Q160 22 166 30L180 42Q192 44 192 48V56Z',roof:'M8 31V30Q8 22 16 22H150Q156 22 160 26L164 31Z',win:['M122 36V25H148Q153 25 157 30L162 36Z','M20 36V26H34V36Z']},
+ popular:{sy:44,body:'M18 56V46Q18 36 34 30Q48 18 76 18H112Q142 18 156 32Q182 36 186 48V56Z',roof:'M44 28Q58 18 76 18H112Q136 18 150 28Z',win:['M52 32Q62 23 78 23H96V32Z','M101 32V23H112Q130 23 142 32Z']}
+};
+let uid=0;
+function car(type,base,roof,stripes){
+ const s=SHAPES[type]||SHAPES.sedan,id='cl'+(uid++),L='#2B1A12';
+ const st=stripes?`<g clip-path="url(#${id})"><rect x="0" y="${s.sy-2}" width="200" height="5" fill="${stripes[0]}"/><rect x="0" y="${s.sy+5}" width="200" height="2.2" fill="${stripes[1]}"/></g>`:'';
+ const wheel=x=>`<circle cx="${x}" cy="58" r="11" fill="#1B1612" stroke="${L}" stroke-width="1.5"/><circle cx="${x}" cy="58" r="5" fill="#D8D4C8" stroke="${L}" stroke-width="1"/>`;
+ return `<svg viewBox="0 0 200 76" role="img" aria-label="Ilustración de un auto de época"><defs><clipPath id="${id}"><path d="${s.body}"/></clipPath></defs>
+ <ellipse cx="100" cy="68" rx="86" ry="3.5" fill="rgba(0,0,0,.28)"/>
+ <path d="${s.body}" fill="${base}" stroke="${L}" stroke-width="1.6" stroke-linejoin="round"/>
+ ${st}
+ <path d="${s.roof}" fill="${roof}" stroke="${L}" stroke-width="1.6" stroke-linejoin="round"/>
+ ${s.win.map(w=>`<path d="${w}" fill="#CFE3E6" stroke="${L}" stroke-width="1.2"/>`).join('')}
+ <rect x="6" y="52" width="188" height="3.5" rx="1.7" fill="#D8D4C8" stroke="${L}" stroke-width=".8"/>
+ ${wheel(48)}${wheel(152)}</svg>`;
+}
+let ans={},step=0,hexInfo={},cards=[];
+COLORS.forEach(c=>hexInfo[c.n]=c.h);
+function hex2hsl(hex){let r=parseInt(hex.slice(1,3),16)/255,g=parseInt(hex.slice(3,5),16)/255,b=parseInt(hex.slice(5,7),16)/255;const mx=Math.max(r,g,b),mn=Math.min(r,g,b);let h=0,s=0,l=(mx+mn)/2;if(mx!==mn){const d=mx-mn;s=l>.5?d/(2-mx-mn):d/(mx+mn);switch(mx){case r:h=(g-b)/d+(g<b?6:0);break;case g:h=(b-r)/d+2;break;default:h=(r-g)/d+4}h/=6}return[h*360,s*100,l*100]}
+function hsl2hex(h,s,l){h/=360;s/=100;l/=100;let r,g,b;if(s===0){r=g=b=l}else{const q=l<.5?l*(1+s):l+s-l*s,p=2*l-q;const hue=t=>{if(t<0)t+=1;if(t>1)t-=1;if(t<1/6)return p+(q-p)*6*t;if(t<1/2)return q;if(t<2/3)return p+(q-p)*(2/3-t)*6;return p};r=hue(h+1/3);g=hue(h);b=hue(h-1/3)}const to=x=>Math.round(x*255).toString(16).padStart(2,'0');return('#'+to(r)+to(g)+to(b)).toUpperCase()}
+// 7 tonos alrededor del original; el original siempre queda con su HEX exacto
+function gamut(hex){
+ const [h,s,l]=hex2hsl(hex);
+ const dA=Math.max(0,Math.floor((l-6)/8)),uA=Math.max(0,Math.floor((94-l)/8));
+ let dk=Math.min(3,dA),lt=6-dk;
+ if(lt>uA){lt=uA;dk=Math.min(dA,6-lt)}
+ const list=[];
+ for(let i=-dk;i<=lt;i++)list.push(i===0?hex.toUpperCase():hsl2hex(h,s,l+i*8));
+ return{list,core:dk};
+}
+const LABELS={era:'Años',body:'Carrocería',style:'Carácter',origin:'Estilo de color',engine:'Motor',dist:'Distribución'};
+function labelOf(k,v){return STEPS.find(s=>s.k===k).opts.find(o=>o.id===v).l}
+function renderTrail(){
+ $('trail').innerHTML=Object.keys(ans).map(k=>`<button class="chip" data-k="${k}">${LABELS[k]}: <b>${labelOf(k,ans[k])}</b> ✕</button>`).join('');
+ $('trail').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{
+  const idx=STEPS.findIndex(s=>s.k===c.dataset.k);
+  STEPS.slice(idx).forEach(s=>delete ans[s.k]);step=idx;renderTrail();renderStep();
+ });
+}
+function renderStep(){
+ if(step>=STEPS.length)return renderResults();
+ const s=STEPS[step];
+ $('card').innerHTML=`<div class="head"><div class="num">${step+1}</div><div><h2>${s.q}</h2><p class="hint">Página ${step+1} de ${STEPS.length}</p></div></div>
+ <div class="opts">${s.opts.map(o=>`<button class="opt" data-id="${o.id}"><b>${o.l}</b><span>${o.d}</span></button>`).join('')}</div>
+ ${step>0?'<button class="back" id="back">← Página anterior</button>':''}
+ <div class="folio">— ${16+step} —</div>`;
+ $('card').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{ans[s.k]=b.dataset.id;step++;renderTrail();renderStep();window.scrollTo({top:0,behavior:'smooth'})});
+ if(step>0)$('back').onclick=()=>{delete ans[s.k];step--;renderTrail();renderStep()};
+}
+// Puntaje exigente: coincidir suma, no coincidir resta, y lo sin etiquetar es neutro.
+const W={era:3,body:1.5,style:2,origin:2.5,engine:2};
+function score(t){
+ let s=0;
+ for(const k in W){
+  if(!ans[k])continue;
+  const a=t[k];
+  if(!a||!a.length)s+=.3*W[k];
+  else if(a.includes(ans[k]))s+=W[k];
+  else s-=.8*W[k];
+ }
+ return s;
+}
+function rgb(h){return[1,3,5].map(i=>parseInt(h.slice(i,i+2),16))}
+function dist(a,b){
+ const A=rgb(a),B=rgb(b),rm=(A[0]+B[0])/2,dr=A[0]-B[0],dg=A[1]-B[1],db=A[2]-B[2];
+ return Math.sqrt((2+rm/256)*dr*dr+4*dg*dg+(2+(255-rm)/256)*db*db);
+}
+let shown=new Set();
+// Familia de color: neutros (blancos, grises, negros) o un sector de 30° del círculo cromático.
+function fam(hex){
+ const[h,s,l]=hex2hsl(hex);
+ return(s<14||l>90||l<12)?'n':String(Math.floor(h/30)%12);
+}
+// Elige los mejores candidatos, pero evita repetir colores parecidos entre sí
+// (distancia mínima + tope por familia) y, en "Otras propuestas", los ya mostrados.
+function choose(list,n,hexOf,idOf){
+ const pool=list.map(x=>({x,s:score(x.t)+Math.random()*1.1,seen:shown.has(idOf(x))})).sort((a,b)=>b.s-a.s);
+ const top=pool[0].s,out=[];
+ const famCount=f=>out.filter(o=>fam(hexOf(o))===f).length;
+ for(const[th,band,cap,allowSeen]of[[100,4,2,false],[70,4,2,false],[70,99,2,false],[40,99,3,false],[0,99,99,false],[0,99,99,true]]){
+  for(const p of pool){
+   if(out.length>=n)break;
+   if(out.includes(p.x)||(p.seen&&!allowSeen)||top-p.s>band)continue;
+   const f=fam(hexOf(p.x));
+   if(famCount(f)>=cap)continue;
+   if(out.every(o=>dist(hexOf(o),hexOf(p.x))>=th))out.push(p.x);
+  }
+  if(out.length>=n)break;
+ }
+ return out;
+}
+function mk(mode,id,title,sub,note,parts,t){
+ parts.forEach(p=>{const g=gamut(p.hex);p.list=g.list;p.sel=g.core});
+ const why=['era','origin','style','body','engine'].filter(k=>ans[k]&&t&&t[k]&&t[k].includes(ans[k])).map(k=>labelOf(k,ans[k]));
+ return{mode,id,title,sub,note,parts,why};
+}
+function carFor(c){
+ const h=c.parts.map(p=>p.list[p.sel]),b=ans.body||'sedan';
+ if(c.mode==='mono')return car(b,h[0],h[0]);
+ if(c.mode==='bitono')return car(b,h[0],h[1]);
+ return car(b,h[0],h[0],[h[1],h[2]]);
+}
+function ficHtml(i){
+ const c=cards[i];
+ return `<article class="fic" data-i="${i}"><div class="pic">${carFor(c)}<span class="no">Nº ${String(i+1).padStart(2,'0')}${i===0?' · Mejor encaje':''}</span></div>
+ <div class="meta"><h3>${c.title}</h3>${c.sub?`<p class="nm">${c.sub}</p>`:''}<p class="txt">${c.note}</p>${c.why.length?`<p class="why">Encaja con: ${c.why.join(' · ')}</p>`:''}
+ ${c.parts.map((p,pi)=>`<div class="part"><div class="plabel"><span>${p.label}</span><span class="rd"><b>${p.list[p.sel]}</b><button class="cp" data-i="${i}" data-p="${pi}">copiar</button></span></div>
+  <div class="tints" role="group" aria-label="Tonos de ${p.label}">${p.list.map((h,ti)=>`<button class="tint${ti===p.sel?' on':''}" style="background:${h}" data-i="${i}" data-p="${pi}" data-t="${ti}" aria-pressed="${ti===p.sel}" aria-label="Tono ${h}" title="${h}"></button>`).join('')}</div>
+  <div class="scale"><span>más oscuro</span><span>más claro</span></div></div>`).join('')}
+ </div></article>`;
+}
+function renderResults(more){
+ if(!more)shown.clear();
+ if(ans.dist==='mono'){
+  cards=choose(COLORS,6,c=>c.h,c=>c.n).map(c=>mk('mono',c.n,c.n,'',c.note,[{label:'Color',hex:c.h}],c.t));
+ }else if(ans.dist==='bitono'){
+  cards=choose(PAIRS,6,p=>hexInfo[p.a],p=>p.label).map(p=>mk('bitono',p.label,p.label,`${p.a} + ${p.b}`,p.note,[{label:'Base',hex:hexInfo[p.a]},{label:'Techo',hex:hexInfo[p.b]}],p.t));
+ }else{
+  cards=choose(STRIPES,6,p=>p.base,p=>p.label).map(p=>mk('franjas',p.label,p.label,'Base + franja + filete',p.note,[{label:p.names[0],hex:p.base},{label:p.names[1],hex:p.s[0]},{label:p.names[2],hex:p.s[1]}],p.t));
+ }
+ cards.forEach(c=>shown.add(c.id));
+ $('card').innerHTML=`<div class="head"><div class="num">★</div><div><h2>Su paleta de color</h2><p class="hint">Informe especial · 1955–1973</p></div></div>
+ <p class="lead">Según lo que usted eligió, estas son las propuestas que mejor le quedan a su auto. Toque cualquier tono de la paleta: el auto se repinta y abajo aparece el código HEX exacto de ese tono, listo para copiar.${ans.dist==='franjas'&&ans.era==='a'?' Ojo: en esos años las franjas eran poco habituales, así que estas son las propuestas más cercanas.':''}</p>
+ <div class="grid">${cards.map((_,i)=>ficHtml(i)).join('')}</div>
+ <div class="actions"><button class="restart more" id="more">Otras propuestas</button><button class="restart" id="restart">Empezar de nuevo</button></div>
+ <p class="note">Los colores y estilos de esta guía son tendencias generales de los autos que circularon en la Argentina entre fines de los cincuenta y 1973; no hay motor turbo ni eléctrico, y el diésel se limita a los usos de trabajo y a algún sedán. Los códigos HEX son una aproximación: la pintura real, sobre todo la metalizada, cambia de brillo según la luz y no se reproduce del todo en pantalla.</p>
+ <div class="folio">— 22 —</div>`;
+ $('more').onclick=()=>{renderResults(true);window.scrollTo({top:0,behavior:'smooth'})};
+ $('restart').onclick=()=>{ans={};step=0;renderTrail();renderStep();window.scrollTo({top:0,behavior:'smooth'})};
+}
+$('card').addEventListener('click',async e=>{
+ const t=e.target.closest('.tint');
+ if(t){
+  const i=+t.dataset.i,p=+t.dataset.p,ti=+t.dataset.t;
+  cards[i].parts[p].sel=ti;
+  const el=document.querySelector(`.fic[data-i="${i}"]`);
+  el.outerHTML=ficHtml(i);
+  const f=document.querySelector(`.tint[data-i="${i}"][data-p="${p}"][data-t="${ti}"]`);
+  if(f)f.focus({preventScroll:true});
+  return;
+ }
+ const b=e.target.closest('.cp');
+ if(b){
+  const hex=cards[+b.dataset.i].parts[+b.dataset.p].list[cards[+b.dataset.i].parts[+b.dataset.p].sel];
+  try{await navigator.clipboard.writeText(hex)}catch(err){}
+  const old=b.textContent;b.textContent='✓';setTimeout(()=>{if(b.isConnected)b.textContent=old},1200);
+ }
+});
+renderTrail();renderStep();
+</script>
+</body></html>
